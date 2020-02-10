@@ -92,7 +92,7 @@ function updateData($title, $author, $image, $id) {
         imageUrl: $image
     }
     $.ajax({
-        url: `${url}/update/${$id}`,
+        url: `${url}/comics/${$id}`,
         method: 'PUT',
         data: objValue,
         success: (result) => {
