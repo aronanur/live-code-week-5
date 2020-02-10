@@ -93,6 +93,9 @@ function updateData($title, $author, $image, $id) {
         imageUrl: $image
     }
     $.ajax({
+        headers: {
+            access_token: localStorage.access_token
+        },
         url: `${url}/comics/${$id}`,
         method: 'PUT',
         data: objValue,
@@ -113,6 +116,7 @@ function updateData($title, $author, $image, $id) {
 }
 
 function listData(data) {
+    $container.empty()
     for (let i = 0; i < data.length; i++) {
         let $item = $($template)
         $item.find('img').attr('src', data[i].imageUrl)
