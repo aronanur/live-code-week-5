@@ -155,8 +155,8 @@ $('#btnLoginPage').click(function () {
     $registerPage.hide()
 })
 
-$(this).click(function (e) {
-    e.preventDefault()
+$(this).click(function () {
+    // e.preventDefault()
     if (document.activeElement.id === 'updatecommic') {
         fetchDataById($(document.activeElement).data('id'))
     }
