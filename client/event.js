@@ -74,6 +74,7 @@ function fetchDataById(id) {
         },
         url: `${url}/comics/${id}`,
         success: (result) => {
+            $('#edit_id').val(result.id)
             $('#title').val(result.title)
             $('#author').val(result.author)
             $('#image').val(result.imageUrl)
@@ -155,7 +156,7 @@ $('#btnLoginPage').click(function () {
     $registerPage.hide()
 })
 
-$(this).click(function () {
+$(this).click(function (e) {
     if (document.activeElement.id === 'updatecommic') {
         e.preventDefault()
         fetchDataById($(document.activeElement).data('id'))
@@ -163,8 +164,6 @@ $(this).click(function () {
 })
 
 $formUpdate.submit(function (e) {
+    e.preventDefault()
     updateData($title.val(), $author.val(), $image.val(), $id.val())
 })
-// $updateButton.click(function (e) {
-//     alert($(this).data('id'))
-// })

@@ -34,3 +34,5 @@ const $formUpdate = $('#form-update')
 const $title = $('#title')
 const $author = $('#author')
 const $image = $('#image')
+const $id = $('#edit_id')
+
