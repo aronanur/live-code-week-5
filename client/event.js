@@ -156,8 +156,8 @@ $('#btnLoginPage').click(function () {
 })
 
 $(this).click(function () {
-    // e.preventDefault()
     if (document.activeElement.id === 'updatecommic') {
+        e.preventDefault()
         fetchDataById($(document.activeElement).data('id'))
     }
 })
