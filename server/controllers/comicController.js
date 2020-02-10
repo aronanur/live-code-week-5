@@ -17,12 +17,7 @@ class ComicController {
     }
 
     static fetchDataById(req, res, next) {
-        let objValue = {
-            title: req.body.title,
-            author: req.body.author,
-            imageUrl: req.body.imageUrl
-        }
-
+        let id = req.params.id
         Comic
             .findOne({
                 where: {
@@ -40,6 +35,11 @@ class ComicController {
     }
 
     static updateComic(req, res, next) {
+        let objValue = {
+            title: req.body.title,
+            author: req.body.author,
+            imageUrl: req.body.imageUrl
+        }
         Comic
             .update(objValue, {
                 where: {
